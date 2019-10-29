@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">demo-DesignPattern</string>
+    <string name="view_touch_sample">ViewTouch</string>
+</resources>
