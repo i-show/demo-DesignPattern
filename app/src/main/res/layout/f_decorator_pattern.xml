@@ -13,10 +13,9 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
+        <TextView
             android:id="@+id/test"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/test" />
+            style="@style/AppTextView.Sample"
+            android:text="@string/run"/>
     </LinearLayout>
 </layout>

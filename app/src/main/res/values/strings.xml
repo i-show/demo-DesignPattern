@@ -2,4 +2,5 @@
     <string name="app_name">demo-DesignPattern</string>
     <string name="view_touch_sample">ViewTouch</string>
     <string name="test">测试</string>
+    <string name="run">运行</string>
 </resources>
