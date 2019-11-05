@@ -2,6 +2,7 @@ package com.ishow.noah.manager
 
 import com.ishow.noah.enties.Sample
 import com.ishow.noah.modules.pattern.decorator.DecoratorPatternFragment
+import com.ishow.noah.modules.pattern.prototype.PrototypeFragment
 import com.ishow.noah.modules.pattern.proxy.ProxyPatternFragment
 
 /**
@@ -17,6 +18,7 @@ object SampleManager {
             val list = ArrayList<Sample>()
             list.add(Sample.instance("装饰模式", DecoratorPatternFragment::class.java))
             list.add(Sample.instance("代理模式", ProxyPatternFragment::class.java))
+            list.add(Sample.instance("原型模式", PrototypeFragment::class.java))
             return list
         }
 }
