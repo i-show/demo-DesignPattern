@@ -1,6 +1,6 @@
 package com.ishow.noah.modules.pattern.prototype.demo1
 
-import android.util.Log
+import com.ishow.noah.widget.LogView
 
 /**
  * Created by yuhaiyang on 2019-11-05.
@@ -8,7 +8,6 @@ import android.util.Log
  */
 class Rect : Shape() {
     override fun draw() {
-        Log.i("yhy", "draw: rect")
+        LogView.log("draw: rect")
     }
-
 }

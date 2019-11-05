@@ -19,5 +19,11 @@
             style="@style/AppTextView.Sample"
             android:text="@string/run" />
 
+
+        <com.ishow.noah.widget.LogView
+            android:id="@+id/logView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp" />
     </LinearLayout>
 </layout>

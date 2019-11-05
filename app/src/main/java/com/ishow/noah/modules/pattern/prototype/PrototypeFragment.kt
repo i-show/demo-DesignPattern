@@ -6,6 +6,7 @@ import com.ishow.noah.R
 import com.ishow.noah.databinding.FPrototypeBinding
 import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
 import com.ishow.noah.modules.pattern.prototype.demo1.ShapeCache
+import com.ishow.noah.widget.LogView
 import kotlinx.android.synthetic.main.f_prototype.*
 
 /**
@@ -27,6 +28,8 @@ class PrototypeFragment : AppBindFragment<FPrototypeBinding, PrototypeViewModel>
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         test.setOnClickListener {
+            LogView.reset()
+
             val cache = ShapeCache()
             cache.cache()
 
@@ -36,6 +39,7 @@ class PrototypeFragment : AppBindFragment<FPrototypeBinding, PrototypeViewModel>
             val rect = cache.getShape(2)
             rect?.draw()
 
+            logView.show()
         }
     }
 }

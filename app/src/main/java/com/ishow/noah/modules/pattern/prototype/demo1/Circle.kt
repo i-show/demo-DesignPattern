@@ -1,6 +1,7 @@
 package com.ishow.noah.modules.pattern.prototype.demo1
 
 import android.util.Log
+import com.ishow.noah.widget.LogView
 
 /**
  * Created by yuhaiyang on 2019-11-05.
@@ -8,7 +9,7 @@ import android.util.Log
  */
 class Circle : Shape() {
     override fun draw() {
-        Log.i("yhy", "draw: circle")
+        LogView.log("draw: circle")
     }
 
 }
