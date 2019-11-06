@@ -27,10 +27,6 @@ class LogView @JvmOverloads constructor(context: Context, attrs: AttributeSet? =
         show(log.toCharArray(), 1, log.length)
     }
 
-    fun isA(): Boolean {
-        return if (showJob == null) false else showJob!!.isActive
-    }
-
     private fun show(text: CharArray, len: Int, size: Int) {
         if (len - 1 >= size) return
         setText(text, 0, len)
