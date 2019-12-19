@@ -20,10 +20,10 @@ class DecoratorPatternFragment : AppBindFragment<FDecoratorPatternBinding, Decor
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        PrintView.printer = printView
+        PrintView.init( printView)
 
         test.setOnClickListener {
-            printView.reset()
+            PrintView.reset()
             val hero = YaSe()
             val skill1 = OneSkill(hero)
             val skill2 = TwoSkill(skill1)
