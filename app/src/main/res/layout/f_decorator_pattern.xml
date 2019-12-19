@@ -11,11 +11,20 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <TextView
             android:id="@+id/test"
             style="@style/AppTextView.Sample"
-            android:text="@string/run"/>
+            android:text="@string/run" />
+
+        <com.ishow.common.widget.PrintView
+            android:id="@+id/printView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_300"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/base_dialog_bg"
+            android:padding="10dp" />
     </LinearLayout>
 </layout>

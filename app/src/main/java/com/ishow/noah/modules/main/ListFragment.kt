@@ -46,4 +46,9 @@ class ListFragment : AppBindFragment<FSampleListBinding, AppBaseViewModel>() {
         }
     }
 
+    override fun getDescription(): String? {
+        return "### 设计模式  \n" +
+                "本Demo是用来展示Java设计模式的"
+    }
+
 }
