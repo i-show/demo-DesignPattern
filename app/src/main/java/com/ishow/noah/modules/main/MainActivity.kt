@@ -49,6 +49,10 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
         }
         descriptionDialog = dialog
 
+
+        assets.open("/")
+
+
         lastFragment?.let {
             dialog.setText(it.getDescription())
             dialog.show()
