@@ -1,6 +1,6 @@
 package com.ishow.noah.modules.pattern.proxy.demo1
 
-import android.util.Log
+import com.ishow.common.widget.PrintView
 
 /**
  * Created by yuhaiyang on 2019-10-31.
@@ -11,10 +11,13 @@ import android.util.Log
 class AssistantProxy(private val fly: IFly) : IFly {
 
     override fun buyTickets() {
-        Log.i("yhy", "确认飞机的时间点是否OK")
-        Log.i("yhy", "确认飞机上有没有餐食")
+        PrintView.print("小秘书，确认老板时间")
+        PrintView.print("小秘书，确认飞机起飞时间")
+        PrintView.print("小秘书，确认飞机上是否有餐食")
+        PrintView.print("小秘书，预定接机车辆")
+        PrintView.print("小秘书，预定酒店")
         fly.buyTickets()
-        Log.i("yhy", "买票成功")
+        PrintView.print("---购票流程结束---")
     }
 
 }

@@ -3,4 +3,6 @@
     <string name="view_touch_sample">ViewTouch</string>
     <string name="test">测试</string>
     <string name="run">运行</string>
+    <string name="struct_img">结构图</string>
+    <string name="pattern_demo">Demo</string>
 </resources>

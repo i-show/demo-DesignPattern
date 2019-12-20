@@ -17,54 +17,33 @@
         <item name="leftTextSize">@dimen/J_title</item>
     </style>
 
-
     <style name="AppTextView" />
-
-    <style name="AppTextView.TouchView" />
-
-    <style name="AppTextView.TouchView.Header">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:gravity">center_vertical</item>
-        <item name="android:background">@color/grey_deep_15</item>
-        <item name="android:paddingStart">5dp</item>
-        <item name="android:paddingTop">5dp</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:textColor">@color/text_grey</item>
-        <item name="android:textSize">@dimen/I_title</item>
-    </style>
 
     <style name="AppTextView.Sample">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/I_title</item>
-        <item name="android:background">@drawable/corner_max_grey_line_white_bg</item>
+        <item name="android:background">@drawable/corner_5dp_accent_color_bg</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:includeFontPadding">false</item>
+        <item name="android:paddingStart">@dimen/gap_grade_5</item>
+        <item name="android:paddingEnd">@dimen/gap_grade_5</item>
+    </style>
+
+    <style name="AppTextView.Title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:gravity">center_vertical|start</item>
+        <item name="android:textColor">@color/text_grey</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
         <item name="android:paddingTop">@dimen/gap_grade_2</item>
         <item name="android:paddingBottom">@dimen/gap_grade_2</item>
-        <item name="android:paddingLeft">@dimen/gap_grade_5</item>
-        <item name="android:paddingRight">@dimen/gap_grade_5</item>
     </style>
 
-    <style name="AppTextViewPro" />
 
-    <style name="AppTextViewPro.TouchView" />
-
-    <style name="AppTextViewPro.TouchView.Item">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:layout_weight">1</item>
-        <item name="android:paddingStart">5dp</item>
-        <item name="android:paddingEnd">2dp</item>
-        <item name="android:onClick">onViewClick</item>
-        <item name="leftTextSize">@dimen/J_title</item>
-        <item name="leftTextColor">@color/color_primary</item>
-        <item name="leftImageVisibility">gone</item>
-        <item name="rightImageVisibility">gone</item>
-        <item name="bottomLineVisibility">gone</item>
-        <item name="leftTextMarginEnd">5dp</item>
-        <item name="textSize">@dimen/J_title</item>
-
-    </style>
 </resources>

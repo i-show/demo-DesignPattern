@@ -1,6 +1,6 @@
 package com.ishow.noah.modules.pattern.proxy.demo1
 
-import android.util.Log
+import com.ishow.common.widget.PrintView
 
 /**
  * Created by yuhaiyang on 2019-10-31.
@@ -9,7 +9,6 @@ import android.util.Log
  */
 class Boss : IFly {
     override fun buyTickets() {
-        Log.i("yhy", "老板买票了")
+        PrintView.print("老板，购票成功")
     }
-
 }

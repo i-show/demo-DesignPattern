@@ -2,6 +2,7 @@ package com.ishow.noah.modules.pattern.proxy
 
 import android.os.Bundle
 import android.view.View
+import com.ishow.common.widget.PrintView
 import com.ishow.noah.R
 import com.ishow.noah.databinding.FProxyPatternBinding
 import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
@@ -33,10 +34,25 @@ class ProxyPatternFragment : AppBindFragment<FProxyPatternBinding, ProxyPatternV
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         test.setOnClickListener {
+            PrintView.reset()
+            PrintView.print("---小秘书代理老板买飞机票Demo---")
             val boss = Boss()
             val assistant = AssistantProxy(boss)
             assistant.buyTickets()
         }
+    }
+
+    override fun getDescription(): String? {
+        return "### 代理模式 \n" +
+                "。\n" +
+                "#### 优点 \n" +
+                " \n" +
+                "#### 缺点 \n" +
+                " \n" +
+                "#### 使用场景 \n" +
+                "1. \n" +
+                "2. "
     }
 }

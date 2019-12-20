@@ -22,13 +22,7 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindContentView(R.layout.a_main)
-
-        val fragmentManager = supportFragmentManager
-        fragmentManager.addOnBackStackChangedListener {
-            if (fragmentManager.backStackEntryCount == 0) {
-                dataBinding.vm?.updateTitle(getString(R.string.app_name))
-            }
-        }
+        supportFragmentManager.addOnBackStackChangedListener { onFragmentBack() }
     }
 
     override fun initViewModel(vm: MainViewModel) {
@@ -40,7 +34,7 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
     fun showDetail(sample: Sample) {
         val fragment = sample.action.newInstance() as? AppBindFragment<*, *> ?: return
 
-        dataBinding.vm?.updateTitle(sample.name)
+        dataBinding.vm.updateTitle(sample.name)
         lastFragment = fragment
         showFragment(fragment, listFragment)
     }
@@ -58,6 +52,13 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
         lastFragment?.let {
             dialog.setText(it.getDescription())
             dialog.show()
+        }
+    }
+
+    private fun onFragmentBack() {
+        if (supportFragmentManager.backStackEntryCount == 0) {
+            dataBinding.vm.updateTitle(getString(R.string.app_name))
+            lastFragment = listFragment
         }
     }
 }

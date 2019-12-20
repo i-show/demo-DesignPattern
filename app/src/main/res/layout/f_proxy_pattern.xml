@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -8,14 +9,52 @@
             type="com.ishow.noah.modules.pattern.proxy.ProxyPatternViewModel" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/test"
-            style="@style/AppTextView.Sample"
-            android:text="@string/run"/>
-    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <TextView
+                style="@style/AppTextView.Title"
+                android:text="@string/pattern_demo"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/test"
+                style="@style/AppTextView.Sample"
+                android:elevation="5dp"
+                android:text="@string/run" />
+
+
+            <com.ishow.common.widget.PrintView
+                android:id="@+id/printView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/base_dialog_bg"
+                android:minHeight="200dp"
+                android:padding="10dp"
+                app:maxHeight="280dp" />
+
+
+            <TextView
+                style="@style/AppTextView.Title"
+                android:text="@string/struct_img"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:id="@+id/struct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/des_image"
+                android:src="@drawable/proxy_pattern_struct" />
+        </LinearLayout>
+
+    </ScrollView>
 </layout>
