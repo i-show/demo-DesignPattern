@@ -8,7 +8,9 @@ import com.ishow.noah.databinding.AMainBinding
 import com.ishow.noah.enties.Sample
 import com.ishow.noah.modules.base.mvvm.view.AppBindActivity
 import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
+import com.ishow.noah.modules.base.mvvm.view.AppPatternFragment
 import com.ishow.noah.widget.DescriptionDialog
+import java.io.BufferedReader
 
 /**
  * Created by yuhaiyang on 2019-10-25.
@@ -16,8 +18,8 @@ import com.ishow.noah.widget.DescriptionDialog
 class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
 
     private val listFragment = ListFragment.newInstance()
-    private var lastFragment: AppBindFragment<*, *>? = null
-    private var descriptionDialog: DescriptionDialog? = null
+    private var lastFragment: AppPatternFragment<*, *>? = null
+    private val descriptionDialog by lazy { DescriptionDialog(this@MainActivity) }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +34,9 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
     }
 
     fun showDetail(sample: Sample) {
-        val fragment = sample.action.newInstance() as? AppBindFragment<*, *> ?: return
+        val fragment = sample.action.newInstance() as? AppPatternFragment<*, *> ?: return
 
-        dataBinding.vm.updateTitle(sample.name)
+        dataBinding.vm?.updateTitle(sample.name)
         lastFragment = fragment
         showFragment(fragment, listFragment)
     }
@@ -42,26 +44,20 @@ class MainActivity : AppBindActivity<AMainBinding, MainViewModel>() {
 
     override fun onRightClick(v: View) {
         super.onRightClick(v)
-        val dialog: DescriptionDialog = if (descriptionDialog == null) {
-            DescriptionDialog(this)
-        } else {
-            descriptionDialog!!
-        }
-        descriptionDialog = dialog
-
-
-        assets.open("/")
-
 
         lastFragment?.let {
-            dialog.setText(it.getDescription())
-            dialog.show()
+            val text = it.getDescription()
+            if(text.isNullOrEmpty()){
+                return
+            }
+            descriptionDialog.setText(text)
+            descriptionDialog.show()
         }
     }
 
     private fun onFragmentBack() {
         if (supportFragmentManager.backStackEntryCount == 0) {
-            dataBinding.vm.updateTitle(getString(R.string.app_name))
+            dataBinding.vm?.updateTitle(getString(R.string.app_name))
             lastFragment = listFragment
         }
     }

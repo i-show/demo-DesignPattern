@@ -2,10 +2,11 @@ package com.ishow.noah.modules.pattern.proxy
 
 import android.os.Bundle
 import android.view.View
+import com.ishow.common.utils.StringUtils
 import com.ishow.common.widget.PrintView
 import com.ishow.noah.R
 import com.ishow.noah.databinding.FProxyPatternBinding
-import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
+import com.ishow.noah.modules.base.mvvm.view.AppPatternFragment
 import com.ishow.noah.modules.pattern.proxy.demo1.AssistantProxy
 import com.ishow.noah.modules.pattern.proxy.demo1.Boss
 import kotlinx.android.synthetic.main.f_proxy_pattern.*
@@ -28,7 +29,7 @@ import kotlinx.android.synthetic.main.f_proxy_pattern.*
  * 例如：我系统的核心功能是播放电影， X、Y、Z站要用我的系统，并且都进行了个性化设置。 那么我自己的核心内容不能去判断X，Y，Z是否是合理的
  * 所以这个时候使用代理类 去进行操作一番 再进入我们的核心逻辑
  */
-class ProxyPatternFragment : AppBindFragment<FProxyPatternBinding, ProxyPatternViewModel>() {
+class ProxyPatternFragment : AppPatternFragment<FProxyPatternBinding, ProxyPatternViewModel>() {
 
     override fun getLayout(): Int = R.layout.f_proxy_pattern
 
@@ -44,15 +45,5 @@ class ProxyPatternFragment : AppBindFragment<FProxyPatternBinding, ProxyPatternV
         }
     }
 
-    override fun getDescription(): String? {
-        return "### 代理模式 \n" +
-                "。\n" +
-                "#### 优点 \n" +
-                " \n" +
-                "#### 缺点 \n" +
-                " \n" +
-                "#### 使用场景 \n" +
-                "1. \n" +
-                "2. "
-    }
+    override fun getDescriptionName() = StringUtils.EMPTY
 }

@@ -12,7 +12,9 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name="com.ishow.noah.modules.main.MainActivity">
+        <activity
+            android:name="com.ishow.noah.modules.main.MainActivity"
+            android:configChanges="orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,9 +22,6 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".modules.pattern.decorator.DecoratorPatternActivity"
-            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

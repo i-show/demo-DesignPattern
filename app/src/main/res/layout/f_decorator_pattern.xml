@@ -16,6 +16,10 @@
         android:padding="10dp">
 
         <TextView
+            style="@style/AppTextView.Title"
+            android:text="@string/pattern_demo" />
+
+        <TextView
             android:id="@+id/test"
             style="@style/AppTextView.Sample"
             android:text="@string/run" />
@@ -29,5 +33,17 @@
             android:minHeight="200dp"
             android:padding="10dp"
             app:maxHeight="280dp" />
+
+        <TextView
+            style="@style/AppTextView.Title"
+            android:text="@string/struct_img" />
+
+        <ImageView
+            android:id="@+id/struct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/des_image"
+            android:src="@drawable/pattern_decorator" />
     </LinearLayout>
 </layout>

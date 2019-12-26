@@ -21,8 +21,7 @@
 
             <TextView
                 style="@style/AppTextView.Title"
-                android:text="@string/pattern_demo"
-                android:textStyle="bold" />
+                android:text="@string/pattern_demo"/>
 
             <TextView
                 android:id="@+id/test"
@@ -44,8 +43,7 @@
 
             <TextView
                 style="@style/AppTextView.Title"
-                android:text="@string/struct_img"
-                android:textStyle="bold" />
+                android:text="@string/struct_img" />
 
             <ImageView
                 android:id="@+id/struct"

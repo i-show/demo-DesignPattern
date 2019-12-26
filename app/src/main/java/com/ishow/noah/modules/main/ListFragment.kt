@@ -3,12 +3,13 @@ package com.ishow.noah.modules.main
 import android.os.Bundle
 import android.view.View
 import com.ishow.common.adapter.BindAdapter
+import com.ishow.common.utils.StringUtils
 import com.ishow.noah.BR
 import com.ishow.noah.R
 import com.ishow.noah.databinding.FSampleListBinding
 import com.ishow.noah.enties.Sample
 import com.ishow.noah.manager.SampleManager
-import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
+import com.ishow.noah.modules.base.mvvm.view.AppPatternFragment
 import com.ishow.noah.modules.base.mvvm.viewmodel.AppBaseViewModel
 import kotlinx.android.synthetic.main.f_sample_list.*
 
@@ -17,7 +18,7 @@ import kotlinx.android.synthetic.main.f_sample_list.*
  *
  */
 
-class ListFragment : AppBindFragment<FSampleListBinding, AppBaseViewModel>() {
+class ListFragment : AppPatternFragment<FSampleListBinding, AppBaseViewModel>() {
 
 
     override fun getLayout(): Int = R.layout.f_sample_list
@@ -26,7 +27,7 @@ class ListFragment : AppBindFragment<FSampleListBinding, AppBaseViewModel>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = BindAdapter<Sample>(view.context)
+        val adapter = BindAdapter<Sample>()
         adapter.setOnItemClickListener { gotoDetail(adapter.getItem(it)) }
         adapter.addLayout(BR.item, R.layout.item_sample_main)
         adapter.data = SampleManager.samples
@@ -46,9 +47,5 @@ class ListFragment : AppBindFragment<FSampleListBinding, AppBaseViewModel>() {
         }
     }
 
-    override fun getDescription(): String? {
-        return "### 设计模式  \n" +
-                "本Demo是用来展示Java设计模式的"
-    }
-
+    override fun getDescriptionName(): String = StringUtils.EMPTY
 }

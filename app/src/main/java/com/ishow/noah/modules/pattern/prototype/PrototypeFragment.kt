@@ -2,9 +2,10 @@ package com.ishow.noah.modules.pattern.prototype
 
 import android.os.Bundle
 import android.view.View
+import com.ishow.common.utils.StringUtils
 import com.ishow.noah.R
 import com.ishow.noah.databinding.FPrototypeBinding
-import com.ishow.noah.modules.base.mvvm.view.AppBindFragment
+import com.ishow.noah.modules.base.mvvm.view.AppPatternFragment
 import com.ishow.noah.modules.pattern.prototype.demo1.ShapeCache
 import com.ishow.noah.widget.LogView
 import kotlinx.android.synthetic.main.f_prototype.*
@@ -21,7 +22,7 @@ import kotlinx.android.synthetic.main.f_prototype.*
  * 1. 资源优化
  * 2. 对象初始化需要消耗很大资源
  */
-class PrototypeFragment : AppBindFragment<FPrototypeBinding, PrototypeViewModel>() {
+class PrototypeFragment : AppPatternFragment<FPrototypeBinding, PrototypeViewModel>() {
 
     override fun getLayout(): Int = R.layout.f_prototype
 
@@ -42,4 +43,6 @@ class PrototypeFragment : AppBindFragment<FPrototypeBinding, PrototypeViewModel>
             logView.show()
         }
     }
+
+    override fun getDescriptionName(): String = StringUtils.EMPTY
 }
